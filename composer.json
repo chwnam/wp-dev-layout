@@ -1,0 +1,35 @@
+{
+  "name": "changwoo/wp-dev-layout",
+  "license": "GPL-2.0-or-later",
+  "version": "0.1.0",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin",
+    "wordpress-theme",
+    "boilerplate"
+  ],
+  "authors": [
+    {
+      "name": "Changwoo Nam",
+      "email": "ep6tri@hotmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0"
+  },
+  "autoload": {
+    "classmap": [
+      "base",
+      "user"
+    ],
+    "files": [
+      "base/module-functions.php"
+    ]
+  },
+  "scripts": {
+    "da": "composer dump-autoload -a",
+    "version": "php version.php"
+  },
+  "minimum-stability": "dev"
+}
