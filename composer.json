@@ -1,7 +1,7 @@
 {
   "name": "changwoo/wp-dev-layout",
   "license": "GPL-2.0-or-later",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "wordpress-plugin",
   "keywords": [
     "wordpress",
@@ -29,7 +29,8 @@
   },
   "scripts": {
     "da": "composer dump-autoload -a",
-    "version": "php version.php"
+    "prefixer": "php ./cli/prefixer.php",
+    "version": "php ./cli/version.php"
   },
   "minimum-stability": "dev"
 }

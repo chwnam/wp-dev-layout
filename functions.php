@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       WP Development Layout
  * Plugin URI:
- * Version:           0.1.0
+ * Version:           0.2.0
  * Description:       Boilerplate code for WordPress development.
  * Author:            Changwoo Nam
  * Author URI:        https://blog.changwoo.pe.kr/
@@ -18,7 +18,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 define( 'WPDL_MAIN', __FILE__ );
-define( 'WPDL_VERSION', '0.1.0' );
+define( 'WPDL_VERSION', '0.2.0' );
 define( 'WPDL_PRIORITY', '100' );
 define( 'WPDL_NAME', 'WP Development Layout' );
 define( 'WPDL_SLUG', 'wpdl' );
