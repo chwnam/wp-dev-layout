@@ -90,10 +90,10 @@ function detect_define( string $content ): array {
 	$offset  = 0;
 	$len     = 0;
 
-	if ( preg_match( '/define\s*\(\s*(\'|\")[A-Za-z0-9]+_VERSION(\'|\")\s*,\s*(\'|\")(.+)(\'|\")\s*\)\s*;/', $content,
-	                 $matches, PREG_OFFSET_CAPTURE ) ) {
-		$version = $matches[4][0];
-		$offset  = $matches[4][1];
+	if ( preg_match( '/define\s*\(\s*[\'\"][A-Za-z0-9]+_VERSION[\'\"]\s*,\s*[\'\"](.+)[\'\"]\s*\)\s*;/',
+	                 $content, $matches, PREG_OFFSET_CAPTURE ) ) {
+		$version = $matches[1][0];
+		$offset  = $matches[1][1];
 		$len     = strlen( $version );
 	}
 
