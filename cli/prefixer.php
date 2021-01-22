@@ -19,7 +19,7 @@ define( 'ROOT_DIR', dirname( __DIR__ ) );
 function prefix_input(): string {
 	do {
 		$prefix = readline( 'Enter a prefix: ' );
-		$match  = preg_match( '/^[a-z0-9_]+$/', $prefix );
+		$match  = preg_match( '/^[A-Za-z0-9_]+$/', $prefix );
 		if ( ! $match ) {
 			echo "Error! Invalid prefix. Prefix should contain lowercase a-z, 0-9, and underscore only.\n";
 		}
@@ -35,7 +35,12 @@ function prefix_input(): string {
 
 function confirm_input( string $prefix ): bool {
 	do {
-		printf( 'Replace all prefix with \'%s\', and \'%s\'. Are you sure? [y, n] ', $prefix, strtoupper( $prefix ) );
+		printf(
+            'Replace all prefix with \'%s\' for class name prefixes, \'%s\' for string prefixes, \'%s\' for define prefixes. Are you sure? [y, n] ',
+            $prefix,
+            strtolower( $prefix),
+            strtoupper( $prefix )
+        );
 		$answer = trim( strtolower( readline() ) );
 		if ( 'n' == $answer ) {
 			return false;
