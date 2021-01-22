@@ -94,8 +94,8 @@ if ( ! class_exists( 'WPDL_Ajax' ) ) {
 		 * 1. Callable - use as-is.
 		 * 2. String and not callable, including '@' - parse.
 		 *
-		 * @sample "foo@bar"       // [wppl()->foo, 'bar']
-		 * @sample "admin.foo@bar" // [wppl()->admin->foo, 'bar']
+		 * @sample "foo@bar"       // [wpdl()->foo, 'bar']
+		 * @sample "admin.foo@bar" // [wpdl()->admin->foo, 'bar']
 		 */
 		private function parse_callback() {
 			$this->callback = wpdl_parse_callback( $this->callback );

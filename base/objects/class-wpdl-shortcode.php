@@ -39,7 +39,7 @@ if ( ! class_exists( 'WPDL_Shortcode' ) ) {
 		}
 
 		private function parse_callback() {
-			return wppl_parse_callback( $this->callback );
+			return wpdl_parse_callback( $this->callback );
 		}
 	}
 }

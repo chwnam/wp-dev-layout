@@ -21,7 +21,7 @@ define( 'WPDL_MAIN', __FILE__ );
 define( 'WPDL_VERSION', '0.1.0' );
 define( 'WPDL_PRIORITY', '100' );
 define( 'WPDL_NAME', 'WP Development Layout' );
-define( 'WPDL_SLUG', 'wppl' );
+define( 'WPDL_SLUG', 'wpdl' );
 // define( 'WPDL_WOOCOMMERCE_REQUIRED', true );
 
 wpdl_init( 'plugin' );
