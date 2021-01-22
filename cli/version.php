@@ -19,6 +19,13 @@
  * 2. 파일 안에 버전이 명시되지 않으면 새로 만들지 않습니다.
  */
 
+if ( 'cli' !== php_sapi_name() ) {
+	exit;
+}
+
+define( 'ROOT_DIR', dirname( __DIR__ ) );
+
+
 /**
  * 파일의 내용을 읽음.
  *
@@ -148,10 +155,10 @@ function replace_version( string $content, string $version, array $match ): stri
  */
 function correct_version() {
 	$files = [
-		'composer.json' => __DIR__ . '/composer.json',
-		'functions.php' => __DIR__ . '/functions.php',
-		'style.css'     => __DIR__ . '/style.css',
-		'package.json'  => __DIR__ . '/package.json',
+		'composer.json' => ROOT_DIR . '/composer.json',
+		'functions.php' => ROOT_DIR . '/functions.php',
+		'style.css'     => ROOT_DIR . '/style.css',
+		'package.json'  => ROOT_DIR . '/package.json',
 	];
 
 	// composer.json versioni extraction.
@@ -159,7 +166,7 @@ function correct_version() {
 	if ( $composer ) {
 		$cv = detect_json( $composer );
 		if ( ! $cv[0] ) {
-			die( 'No version found in compsoer.json.' );
+			die( 'No version found in composer.json.' );
 		}
 
 		$functions = get_content( $files['functions.php'] );
@@ -209,6 +216,4 @@ function correct_version() {
 	}
 }
 
-if ( 'cli' === php_sapi_name() ) {
-	correct_version();
-}
+correct_version();
