@@ -75,13 +75,13 @@ if ( ! function_exists( 'wpdl_parse_callback' ) ) {
 
 
 if ( ! function_exists( 'wpdl_submodule' ) ) {
-	function wpdl_submodule( string $module_name ): ?WPPL_Module {
+	function wpdl_submodule( string $module_name ): ?WPDL_Module {
 		if ( empty( $module_name ) ) {
 			return null;
 		}
 
-		return new class( $module_name ) implements WPPL_Module {
-			use WPPL_Submodule_Impl;
+		return new class( $module_name ) implements WPDL_Module {
+			use WPDL_Submodule_Impl;
 
 			private string $module_name;
 
